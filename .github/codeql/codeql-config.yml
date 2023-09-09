@@ -1,0 +1,20 @@
+##
+#  @file
+#  Configuration file for code scanning CodeQL.
+#
+#  @copyright
+#  Copyright (c) 2023, Codevience. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+#  @par reference
+#  - https://codeql.github.com/
+#
+##
+
+name: "Code Scanning: CodeQL"
+
+queries:
+  - uses: security-and-quality
+
+paths-ignore:
