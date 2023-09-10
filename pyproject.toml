@@ -11,3 +11,13 @@
 #  - https://pip.pypa.io/
 #
 ##
+
+#
+# yapf: https://github.com/google/yapf
+#
+[tool.yapfignore]
+    ignore_patterns = [
+        ".git/**",
+        ".github/**",
+        ".venv/**",
+        ]
