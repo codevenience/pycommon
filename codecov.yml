@@ -1,0 +1,46 @@
+##
+#  @file
+#  Configuration file for Codecov.
+#
+#  @copyright
+#  Copyright (c) 2023, Codevience. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+#  @par reference
+#  - https://docs.codecov.io
+#
+##
+
+codecov:
+  require_ci_to_pass: yes
+
+coverage:
+  precision: 2
+  round: nearest
+  range: 70..90
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 5%
+        base: auto
+        branches:
+          - main
+        if_ci_failed: error
+        only_pulls: false
+        paths:
+          - pycommon
+        removed_code_behavior: off
+
+#
+# Ignore section is based on the generated report.
+# No need to list out the ignore paths in here.
+# Maintain this list in "pyproject.toml".
+#
+ignore:
+
+comment:
+  layout: "diff, flags, files"
+  behavior: default
+  require_changes: false
