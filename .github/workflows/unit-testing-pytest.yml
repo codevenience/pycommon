@@ -1,0 +1,68 @@
+##
+#  @file
+#  Configuration file for unit testing - pytest.
+#
+#  @copyright
+#  Copyright (c) 2023, Codevience. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+#  @par reference
+#  - https://docs.pytest.org/
+#
+##
+
+name: 'Unit Testing - pytest'
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  pytest:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    runs-on : ${{ matrix.os }}
+
+    steps:
+      - name: Checkout the repository and commit
+        uses: actions/checkout@v3
+        with:
+            submodules: 'recursive'
+            fetch-depth: 0
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+
+      - name: Test with pytest (macOS)
+        if: startsWith(matrix.os, 'macOS')
+        run: |
+          PYTHONPATH=$PYTHONPATH:$(pwd)
+          export PYTHONPATH
+          pytest
+
+      - name: Test with pytest (Ubuntu)
+        if: startsWith(matrix.os,'ubuntu')
+        run: |
+          PYTHONPATH=$PYTHONPATH:$(pwd)
+          export PYTHONPATH
+          pytest
+
+      - name: Test with pytest (Windows)
+        if: startsWith(matrix.os,'windows')
+        run: |
+          $env:PYTHONPATH = $env:PYTHONPATH + ($pwd).path
+          $env:PYTHONPATH
+          pytest
