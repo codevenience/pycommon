@@ -21,3 +21,9 @@
         ".github/**",
         ".venv/**",
         ]
+
+#
+# pytest: https://docs.pytest.org/
+#
+[tool.pytest.ini_options]
+testpaths = "tests"
