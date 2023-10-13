@@ -27,6 +27,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest']
+        python-version: ['3.12']
 
     runs-on: ${{ matrix.os }}
 
@@ -39,6 +40,8 @@ jobs:
 
       - name: Setup Python environment
         uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
