@@ -3,9 +3,9 @@
 #  Testcases for foundation core functionalities.
 #
 #  @copyright
-#  Copyright (c) 2023, Codevience. All rights reserved.<BR>
+#  Copyright (c) 2023, Codevenience Organization. All rights reserved.<BR>
 #
-#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#  SPDX-License-Identifier: BSD-3-Clause
 #
 #  @par reference
 #
