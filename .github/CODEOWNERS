@@ -1,0 +1,18 @@
+##
+#  @file
+#  Configuration file for the maintainers.
+#
+#  @copyright
+#  Copyright (c) 2025, Codevenience Organization. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-3-Clause
+#
+#  @par reference
+#  - https://docs.github.com/articles/about-code-owners
+#
+##
+
+#
+# Administrator of the Codevenience Organization.
+#
+* @codevenience/codevenience-admin
