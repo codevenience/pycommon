@@ -6,10 +6,10 @@ name = "pypi"
 [packages]
 
 [dev-packages]
-yapf = "*"
 flake8 = "*"
 pytest = "*"
 pytest-cov = "*"
+yapf = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.14"
