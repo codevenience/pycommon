@@ -15,6 +15,8 @@ Codevenience Organization pycommon package.
 """
 from typing import List
 
+from pycommon import const
+
 __author__: str = 'Codevenience Organization'
 __copyright__: str = \
   'Copyright (c) 2023, Codevenience Organization. All rights reserved.'
@@ -27,4 +29,5 @@ __doc__: str = '''
 '''
 
 __all__: List[str] = [
+    'const',
 ]
